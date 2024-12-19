@@ -1,15 +1,13 @@
-:root{
 
-
-
-}
 
 *{
     margin: 0; 
     padding: 0;
     box-sizing: border-box;
 }
-
+.w-90{
+    width: 95% !important;
+}
 
 .navbar{
     height: 70px;
@@ -99,4 +97,24 @@ label[for="search"] i{
 
 .card{
     border:none !important;
+    cursor: pointer;
+}
+
+/* [x] trending */
+
+#trendyProducts{
+    margin-top: 5rem;
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 1rem !important;
+}
+.swiper-button-next, .swiper-button-prev{
+    background-color: rgba(255, 255, 255, .2) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+.swiper-button-next{
+    right: -2px !important;
+}
+.swiper-button-prev{
+    left: 15 !important;
 }

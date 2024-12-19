@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>trends</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container justify-content-between">
+         <a class="navbar-brand text-success" href="#">Shopic <i class="fa-solid fa-bag-shopping "></i></a>
+         <button
+             class="navbar-toggler d-lg-none"
+             type="button"
+             data-bs-toggle="collapse"
+             data-bs-target="#collapsibleNavId"
+             aria-controls="collapsibleNavId"
+             aria-expanded="false"
+             aria-label="Toggle navigation"
+         > <i class="fa-solid fa-bars"></i> </button>
+         <div class="collapse navbar-collapse" id="collapsibleNavId">
+             <ul class="navbar-nav justify-content-center mx-auto mt-2 mt-lg-0  w-25">
+                 <li class="nav-item">
+                     <a class="nav-link active" href="#" aria-current="page"
+                         >Home <span class="visually-hidden">(current)</span></a
+                     >
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#">Contact</a>
+                 </li>
+                 
+             </ul>
+             <ul class="navbar-nav    justify-content-end ">
+                 <li class="nav-item mx-2"><label for="search">
+                     <input id="searchField" type="search" placeholder="Search" >
+                     <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+                 </label> </li>
+                 <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="fa-solid fa-cart-plus "></i></a></li>
+                 <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="fa-solid fa-user  "></i></a></li>
+                 <li class="nav-item mx-2"><button class="btn btn-outline-success" >Log Out</button></li>
+             </ul>
+         </div>
+        </div>
+    </nav>
+
+    <script src="./JS/bootstrap.min.js"></script> 
+    <script src="./JS/handlesearchicon.js"></script>
+    <script type="module" src="./JS/trends.js"></script>
+</body>
+</html>
