@@ -1,0 +1,43 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.card {
+  border: none !important;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
+  border-top-right-radius: 90%;
+  border-bottom-left-radius: 90%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.showMore{
+  position: absolute;
+  left: -100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.card img {
+  border-top-right-radius: 90%;
+  border-bottom-left-radius: 90%;
+  transition: all 0.3s ease-in-out;
+}
+.card:hover img {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.card:hover {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .showMore{
+  top: 90%;
+  left: 68%;
+}
+
+

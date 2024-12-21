@@ -1,104 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Shopic</title>
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-
-    <link rel="stylesheet" href="./CSS/all.min.css">
-    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="./CSS/style.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-       <div class="container justify-content-between">
-        <a class="navbar-brand text-success" href="#">Shopic <i class="fa-solid fa-bag-shopping "></i></a>
+    <link rel="stylesheet" href="./CSS/all.min.css" />
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-sm navbar-light bg-light"
+    >
+      <div class="container justify-content-between">
+        <a class="navbar-brand text-success" href="#"
+          >Shopic <i class="fa-solid fa-bag-shopping"></i
+        ></a>
         <button
-            class="navbar-toggler d-lg-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        > <i class="fa-solid fa-bars"></i> </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav justify-content-center mx-auto mt-2 mt-lg-0  w-25">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#" aria-current="page"
-                        >Home <span class="visually-hidden">(current)</span></a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                
-            </ul>
-            <ul class="navbar-nav    justify-content-end ">
-                <li class="nav-item mx-2"><label for="search">
-                    <input id="searchField" type="search" placeholder="Search" >
-                    <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
-                </label> </li>
-                <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="fa-solid fa-cart-plus "></i></a></li>
-                <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="fa-solid fa-user  "></i></a></li>
-                <li class="nav-item mx-2"><button class="btn btn-outline-success" >Log Out</button></li>
-            </ul>
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="collapsibleNavId"
+        >
+          <ul
+            class="navbar-nav justify-content-center mx-auto mt-2 mt-lg-0 w-25"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="#"
+                aria-current="page"
+                >Home
+                <span class="visually-hidden"
+                  >(current)</span
+                ></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav justify-content-end">
+            <li class="nav-item mx-2">
+              <label for="search">
+                <input
+                  id="searchField"
+                  type="search"
+                  placeholder="Search"
+                />
+                <i
+                  id="searchIcon"
+                  class="fa-solid fa-magnifying-glass"
+                ></i>
+              </label>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="./cart.html"
+                ><i class="fa-solid fa-cart-plus"></i
+              ></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#"
+                ><i class="fa-solid fa-user"></i
+              ></a>
+            </li>
+            <li class="nav-item mx-2">
+              <button class="btn btn-outline-success">
+                Log Out
+              </button>
+            </li>
+          </ul>
         </div>
-       </div>
+      </div>
     </nav>
     <section class="slider mb-5">
-        <main class="container">
-            <div class="carousel">
-                <div class="carousel-item active" style="background-image: url('./Images/pexels-fox-58267-18910365.webp');"></div>
-                <div class="carousel-item" style="background-image: url('./Images/pexels-karolina-grabowska-4041392.webp');"></div>
-                <div class="carousel-item" style="background-image: url('./Images/pexels-kpaukshtite-3270223-_1_.webp');"></div>
-                <div class="carousel-item" style="background-image: url('./Images/pexels-n-voitkevich-6214383.webp');"></div>
-                <div class="carousel-item" style="background-image: url('./Images/pexels-pixabay-258244.webp');"></div>
-                
-                <div class="controls px-3">
-                    <button class="prev btn btn-rounded text-dark bg-white rounded-circle "><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="next btn btn-rounded text-dark bg-white rounded-circle "><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+      <main class="container">
+        <div class="carousel">
+          <div
+            class="carousel-item active"
+            style="
+              background-image: url('./Images/pexels-fox-58267-18910365.webp');
+            "
+          ></div>
+          <div
+            class="carousel-item"
+            style="
+              background-image: url('./Images/pexels-karolina-grabowska-4041392.webp');
+            "
+          ></div>
+          <div
+            class="carousel-item"
+            style="
+              background-image: url('./Images/pexels-kpaukshtite-3270223-_1_.webp');
+            "
+          ></div>
+          <div
+            class="carousel-item"
+            style="
+              background-image: url('./Images/pexels-n-voitkevich-6214383.webp');
+            "
+          ></div>
+          <div
+            class="carousel-item"
+            style="
+              background-image: url('./Images/pexels-pixabay-258244.webp');
+            "
+          ></div>
 
-            </div>
-        </main>
+          <div class="controls px-3">
+            <button
+              class="prev btn btn-rounded text-dark bg-white rounded-circle"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              class="next btn btn-rounded text-dark bg-white rounded-circle"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </main>
     </section>
     <section id="trendyProducts">
-        <main class="container  swiper  ">
-            <h3 class=" mb-5">Trendy Products</h3>
-            <div class="row flex-nowrap row-cols-1 row-cols-md-4 w-75   swiper-wrapper  border border-1   " id="trendGroup">
-                
-                
-            
-            
-                
-            </div>
-             <!-- If we need pagination -->
-            
+      <main class="container swiper">
+        <h3 class="mb-5">Trendy Products</h3>
+        <div
+          class="row flex-nowrap row-cols-1 row-cols-md-4 w-75 swiper-wrapper "
+          id="trendGroup"
+        ></div>
+        <!-- If we need pagination -->
 
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev text-dark  "></div>
-            <div class="swiper-button-next text-dark "></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev text-dark"></div>
+        <div class="swiper-button-next text-dark"></div>
 
-            <!-- If we need scrollbar -->
-            
-        </main>
+        <!-- If we need scrollbar -->
+      </main>
     </section>
-    <section class="categories">
-
+    <section class="categories my-5">
+      <main class="container">
+        <h3 class="mb-5">All categories</h3>
+        <div class="categories d-flex justify-content-center">
+          <button id="allBtn" class="btn btn-outline-success" >All</button>
+          <button id="menBtn" class="btn btn-outline-success mx-4" >Men</button>
+          <button id="womenBtn" class="btn btn-outline-success" >Women</button>
+          <button id="phoneBtn" class="btn btn-outline-success" >Phones</button>
+        </div>
+        <div id="allProductsContainer" class="row row-cols-1 row-cols-md-3  g-5 mt-5">
+          
+        </div>
     </section>
 
-    <footer>
-        
-    </footer>
-    
+    <footer></footer>
+
     <script src="./JS/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./JS/handlesearchicon.js"></script>
     <script type="module" src="./JS/main.js"></script>
-</body>
+  </body>
 </html>

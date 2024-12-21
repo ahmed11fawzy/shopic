@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav
+    class="navbar navbar-expand-sm navbar-light bg-light"
+  >
+    <div class="container justify-content-between">
+      <a class="navbar-brand text-success" href="#"
+        >Shopic <i class="fa-solid fa-bag-shopping"></i
+      ></a>
+      <button
+        class="navbar-toggler d-lg-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div
+        class="collapse navbar-collapse"
+        id="collapsibleNavId"
+      >
+        <ul
+          class="navbar-nav justify-content-center mx-auto mt-2 mt-lg-0 w-25"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              href="./index.html"
+              aria-current="page"
+              >Home
+              <span class="visually-hidden"
+                >(current)</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav justify-content-end">
+          <li class="nav-item mx-2">
+            <label for="search">
+              <input
+                id="searchField"
+                type="search"
+                placeholder="Search"
+              />
+              <i
+                id="searchIcon"
+                class="fa-solid fa-magnifying-glass"
+              ></i>
+            </label>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="./cart.html"
+              ><i class="fa-solid fa-cart-plus"></i
+            ></a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#"
+              ><i class="fa-solid fa-user"></i
+            ></a>
+          </li>
+          <li class="nav-item mx-2">
+            <button class="btn btn-outline-success">
+              Log Out
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <main class="container">
+
+
+      <header class="my-5">
+        <h1 class="">Cart Items <i class="fa-solid fa-cart-shopping text-success"></i></h1>
+      </header>
+      
+      
+      
+      <div id="cartContainer" class="row    g-4">
+        
+      </div>
+    </main>
+  </section>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">purchasing ... </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="modal" class="modal-body border border-0">
+            
+            
+                <p class="text-success">Almost done <i class="fa-solid fa-check"></i> </p>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary bg-success-subtle">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="./JS/bootstrap.min.js"></script>
+    <script src="./JS/handlesearchicon.js"></script>
+    <script src="./JS/cart.js"></script>
+</body>
+</html>
