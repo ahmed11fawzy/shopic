@@ -6,7 +6,13 @@ const options = {
     }
 };
 let cartProducts = [];
+const cartContainer = document.querySelector('#cartContainer');
+function showSpinner() {
+    cartContainer.innerHTML = `
+        <span class="loader m-auto"></span>
+        `;
 
+}
 // Load existing cart products from localStorage
 const storedProducts = localStorage.getItem("cartProducts");
 if (storedProducts) {
@@ -24,13 +30,14 @@ function showCartItem(cartProducts) {
 
 }
 
-// showCartItem(cartProducts);
+showCartItem(cartProducts);
 
 const url = 'https://shein-scraper-api.p.rapidapi.com/shein/product/details?goods_id=26546662&currency=usd&country=us&language=en';
 
 async function getCartItemsDetails(id) {
 
     try {
+        showSpinner()
         const response = await fetch(`https://shein-scraper-api.p.rapidapi.com/shein/product/details?goods_id=${id}&currency=usd&country=us&language=en`, options);
         if (!response.ok) {
             throw Error(
@@ -47,9 +54,10 @@ async function getCartItemsDetails(id) {
 
 
 
-const cartContainer = document.querySelector('#cartContainer');
+
 function displayCartItem(cartProduct) {
     let item = cartProduct
+    cartContainer.innerHTML = '';
     cartContainer.innerHTML += `
     <div product class="col">
             <div class="card h-100">
@@ -67,13 +75,28 @@ function displayCartItem(cartProduct) {
                         <p> ${item ? item?.comment_rank_average : 3}  <i class="fa-solid fa-star text-warning"></i> </p>
                     </div>
                   </div>
-
+                     <div class="card-footer bg-white border border-0 top-100 d-flex flex-column  justify-content-between ">
+                        <div class=" counter-control d-flex w-75 justify-content-between  border border-success rounded rounded-2 ">
+                            <div class="d-flex">
+                                <button id="minusIcon" class='btn ' ><i class='fa-solid fa-minus fs-lg '></i></button>
+                                <input id ="quantity" type="text" class="form-control  text-center border border-0 " disabled value="1">
+                                <button id="plusIcon" class='btn ' ><i class='fa-solid fa-plus  fs-lg '></i></button> 
+                            </div>
+                            <div class="">
+                                <h3 class="d-flex" >Total:
+                                <input id="total" type="text" class="form-control w-50  border border-0 " disabled value="1">$
+                                </h3>
+                                
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between w-75 mt-3">
+                            <button id="delete" class="btn btn-danger w-25">Delete</button>
+                            <button id="buyNow" class="btn btn-success w-25 ">Buy Now</button>
+                        </div>
+                    </div>
                   
                   </div>
-                  <div class="card-footer bg-white border border-0 top-100  ">
-                      <button id="buyNow" class="btn btn-outline-success me-lg-4" data-bs-toggle="modal" data-bs-target="#exampleModal" >Buy Now</button>
-                      <button  id="delete" class="btn btn-outline-danger">Delete</button>
-                  </div>
+                
             </div>
           </div>
           <div class="col-md-4">
@@ -85,17 +108,37 @@ function displayCartItem(cartProduct) {
               />
               </div>
           </div>`;
+
+    const plusIcon = document.querySelector('#plusIcon');
+    const minusIcon = document.querySelector('#minusIcon');
+    const quantity = document.querySelector('#quantity');
+    const total = document.querySelector('#total');
+    plusIcon.addEventListener('click', () => {
+        quantity.value++;
+        total.value = quantity.value * item.sale_price.amount;
+    })
+
+    minusIcon.addEventListener('click', () => {
+        if (document.querySelector('#quantity').value > 1) {
+            document.querySelector('#quantity').value--;
+            total.value = quantity.value * item.sale_price.amount;
+        }
+    })
+
+
+
+
     const deleteBtn = document.querySelector('#delete');
     const buyNowBtn = document.querySelector('#buyNow');
 
     deleteBtn.addEventListener('click', () => {
         removeCartItem(item.goods_id);
-        buyNowBtn.addEventListener('click', () => {
-            cartProducts = cartProducts.filter((item) => item !== pId);
-            localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-            cartContainer.innerHTML = '';
-        })
+
     });
+    buyNowBtn.addEventListener('click', () => {
+        removeCartItem(item.goods_id);
+        cartContainer.innerHTML = '';
+    })
 
 }
 

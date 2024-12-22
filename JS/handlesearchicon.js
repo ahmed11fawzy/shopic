@@ -18,3 +18,5 @@ function handleSearchIconClick(searchIcon, searchField) {
 }
 
 handleSearchIconClick(searchIcon, searchField);
+
+

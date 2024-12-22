@@ -8,12 +8,19 @@ localStorage.getItem("trendId")
 	? (trendId = localStorage.getItem("trendId"))
 	: (trendId = 0);
 console.log(trendId);
+const container = document.querySelector("#specificTrendContainer");
 
-/* getSpecificTrend(trendId).then(data => {
-		  console.log(data)
-	 })  */
+function showSpinner() {
+	container.innerHTML = `
+        <span class="loader m-auto"></span>
+        `;
+
+}
+
+
 async function getSpecificTrend(trendId) {
 	try {
+		showSpinner();
 		const response = await fetch(
 			`https://shein-scraper-api.p.rapidapi.com/shein/trends/products?trend_id=${trendId}&page=1&size=22&sort=recommend&country=us&language=en&currency=usd`,
 			{
@@ -50,14 +57,13 @@ async function getTrendyProducts() {
 	}
 }
 
-const container = document.querySelector(
-	"#specificTrendContainer"
-);
-getTrendyProducts().then((data) => {
+getSpecificTrend(trendId).then((data) => {
 	console.log(data);
 	let specificTrend = data.data;
+	container.innerHTML = "";
 	specificTrend.forEach((element) => {
 		console.log(element);
+
 		container.innerHTML += `
 	<div class="col">
                   <div class="card">

@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+        
     <title>Shopic</title>
     <link
       rel="stylesheet"
@@ -71,7 +75,8 @@
                 ></i>
               </label>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item mx-2 position-relative">
+              <span id="numberOfCartItems" class="position-absolute top-0 start-100 bg-success text-white rounded rounded-circle">0</span>
               <a class="nav-link" href="./cart.html"
                 ><i class="fa-solid fa-cart-plus"></i
               ></a>
@@ -90,37 +95,55 @@
         </div>
       </div>
     </nav>
-    <section class="slider mb-5">
+    <section class="slider ">
       <main class="container">
         <div class="carousel">
           <div
             class="carousel-item active"
             style="
-              background-image: url('./Images/pexels-fox-58267-18910365.webp');
+              background-image: url('./Images/pexels-jefferson-1564389-3020129.jpg');
+            "
+          ></div>
+          <div
+            class="carousel-item "
+            style="
+              background-image: url('./Images/webp/pexels-cup-of-couple-6963151.webp');
             "
           ></div>
           <div
             class="carousel-item"
             style="
-              background-image: url('./Images/pexels-karolina-grabowska-4041392.webp');
+              background-image: url('./Images/webp/pexels-cup-of-couple-8015784.webp');
             "
           ></div>
           <div
             class="carousel-item"
             style="
-              background-image: url('./Images/pexels-kpaukshtite-3270223-_1_.webp');
+              background-image: url('./Images/webp/pexels-karolina-grabowska-5632398.webp');
             "
           ></div>
           <div
             class="carousel-item"
             style="
-              background-image: url('./Images/pexels-n-voitkevich-6214383.webp');
+              background-image: url('./Images/webp/pexels-marina-podrez-3269296-11671964.webp');
             "
           ></div>
           <div
             class="carousel-item"
             style="
-              background-image: url('./Images/pexels-pixabay-258244.webp');
+              background-image: url('./Images/webp/pexels-marina-podrez-3269296-11671964.webp');
+            "
+          ></div>
+          <div
+            class="carousel-item"
+            style="
+              background-image: url('./Images/webp/pexels-ron-lach-10566514\ \(1\).webp');
+            "
+          ></div>
+          <div
+            class="carousel-item"
+            style="
+              background-image: url('./Images/webp/pexels-saliemolini-13430484.webp');
             "
           ></div>
 
@@ -143,7 +166,7 @@
       <main class="container swiper">
         <h3 class="mb-5">Trendy Products</h3>
         <div
-          class="row flex-nowrap row-cols-1 row-cols-md-4 w-75 swiper-wrapper "
+          class="row flex-nowrap row-cols-1 row-cols-sm-1 row-cols-md-4 w-75 swiper-wrapper "
           id="trendGroup"
         ></div>
         <!-- If we need pagination -->
@@ -158,22 +181,27 @@
     <section class="categories my-5">
       <main class="container">
         <h3 class="mb-5">All categories</h3>
-        <div class="categories d-flex justify-content-center">
-          <button id="allBtn" class="btn btn-outline-success" >All</button>
-          <button id="menBtn" class="btn btn-outline-success mx-4" >Men</button>
-          <button id="womenBtn" class="btn btn-outline-success" >Women</button>
+        <div class="categories d-flex justify-content-md-center">
+          <button id="allBtn" class="btn btn-success" >All</button>
+          <button id="menBtn" class="btn btn-outline-success mx-3 mx-lg-4" >Men</button>
+          <button id="womenBtn" class="btn btn-outline-success me-3 me-lg-4" >Women</button>
           <button id="phoneBtn" class="btn btn-outline-success" >Phones</button>
         </div>
-        <div id="allProductsContainer" class="row row-cols-1 row-cols-md-3  g-5 mt-5">
+        <div id="allProductsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-5 mt-5">
           
         </div>
     </section>
-
-    <footer></footer>
+    
+    <footer class=" bg-dark text-white d-flex justify-content-center align-items-center  ">
+      <div class="container  text-white ">
+        <h2 class="text-center  d-flex justify-content-center align-items-center font-monospace "> All rights &copy; reserved to<p class="text-info ms-2"> af.reus ❤</p></h2>        
+      </div>
+    </footer>
 
     <script src="./JS/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./JS/handlesearchicon.js"></script>
+    <script type="module" src="./JS/CategoryFilteration.js"></script>
     <script type="module" src="./JS/main.js"></script>
   </body>
 </html>

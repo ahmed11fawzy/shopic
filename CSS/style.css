@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+}
+body{
+  padding-bottom: 0px;
 }
 .w-90 {
   width: 95% !important;
@@ -50,9 +54,9 @@ label[for="search"] i {
 /* [x] slider */
 
 .slider {
-  height: 80vh !important;
+  height: 95vh !important;
   overflow: hidden;
-  margin-block: 30px;
+  
 }
 .carousel {
   position: relative;
@@ -64,7 +68,7 @@ label[for="search"] i {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: 100% 100%;;
   background-position: center;
   transition: opacity 0.5s ease-in-out;
   opacity: 0; /* Start with all slides hidden */
@@ -96,7 +100,7 @@ label[for="search"] i {
 /* [x] trending */
 
 #trendyProducts {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
@@ -113,3 +117,58 @@ label[for="search"] i {
 .swiper-button-prev {
   left: 15 !important;
 }
+
+#numberOfCartItems{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 15px;
+  min-height: 15px;
+  font-size: 12px;
+}
+
+/* footer */
+footer{
+    height: 150px;
+    margin-top: 56px;
+    margin-bottom: -8px;
+}
+footer p {
+            font-family: "Leckerli One", serif;
+            font-weight: 400;
+            font-style: normal;
+}
+
+/* IMP Spinner style */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #198754;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #FF3D00;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

@@ -1,0 +1,21 @@
+.counter-control{
+    padding-inline: 10px;
+
+    transition: all 0.3s ease;
+}
+
+.counter-control input{
+    background-color: transparent !important;
+}
+
+.counter-control button:hover{
+    border-radius: 50% !important;
+    background-color: #198754 !important;
+    color: white !important;
+}
+
+#buyNow:hover{
+    background-color: #00b963f1 !important;
+    border:none !important;
+    color: white !important;
+}

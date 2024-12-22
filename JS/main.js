@@ -179,6 +179,22 @@ swiperWrapper.addEventListener("click", (e) => {
 
 /*Handle show all categories */
 
+export let productId;
+let cartProducts;
+
+function showNumberOfCartItems() {
+    cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    document.querySelector("#numberOfCartItems").innerText = cartProducts.length;
+}
+showNumberOfCartItems();
+
+function gettingAndSettingAllCartProduct(productId) {
+    cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    cartProducts.push(productId);
+    document.querySelector("#numberOfCartItems").innerText = cartProducts.length;
+    localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+    return cartProducts;
+}
 const jsonFileUrl = "../JS/trendProducts.json";
 async function gettingAllCategories() {
     try {
@@ -196,15 +212,19 @@ async function gettingAllCategories() {
 }
 
 
+
 const showAllCategories = document.querySelector("#allBtn");
 const allCategoriesContainer = document.querySelector("#allProductsContainer");
 function displayAllCategories() {
     gettingAllCategories().then((data) => {
         console.log(data);
         let allProducts = data.data;
-        allProducts.forEach(product => {
-            allCategoriesContainer.innerHTML +=
-                `<div class="col">
+        allCategoriesContainer.innerHTML = `<span class="loader m-auto"></span> `;
+        setTimeout(() => {
+            allCategoriesContainer.innerHTML = ''
+            allProducts.forEach(product => {
+                allCategoriesContainer.innerHTML +=
+                    `<div class="col">
             <div class="card h-100">
               <img
                 src="${product.goods_img}"
@@ -218,34 +238,72 @@ function displayAllCategories() {
                 </h5>
                 <div class="d-flex justify-content-between">
                   <p class="view"> <i class="fa-solid fa-eye fa-xl fa-beat-fade"></i> </p>
-                  <p class="add"> <i class="fa-solid fa-plus fa-xl "></i> </p>
+                  <p class="add"> <i class="fa-solid fa-plus fa-xl"></i> </p>
                 </div>
               </div>
             </div>
           </div>
 
              `;
+                let allViews = document.querySelectorAll('.view')
+                let allAdds = document.querySelectorAll('.add')
 
+                for (let i = 0; i < allViews.length; i++) {
+                    allViews[i].addEventListener('click', (e) => {
+                        console.log(allProducts[i]);
 
-        });
-        let allViews = document.querySelectorAll('.view')
-        let allAdds = document.querySelectorAll('.add')
+                        productId = allProducts[i].goods_id;
+                        localStorage.setItem("productId", productId);
+                        window.location.href = "productDetails.html";
+                    })
+                    allAdds[i].addEventListener('click', () => {
+                        console.log(allProducts[i]);
+                        console.log(allProducts[i].goods_id);
+                        productId = allProducts[i].goods_id;
+                        gettingAndSettingAllCartProduct(productId);
+                        location.href = '#numberOfCartItems'
+                    })
+                }
 
-        for (let i = 0; i < allViews.length; i++) {
-            allViews[i].addEventListener('click', () => {
-                e.target.stopPropagation();
-                window.location.href = "productDetails.html";
             })
-        }
+        }, 2000)
+
+
+
 
     });
 }
-
+displayAllCategories();
 showAllCategories.addEventListener("click", () => {
     displayAllCategories();
 });
 
 
+/* Handle show  categories Buttons  */
+
+let allCategoriesBtn = document.querySelectorAll('.btn');
+console.log(allCategoriesBtn);
+let activeBtn = document.querySelector('#allBtn'); // This should be initialized as the active button
+
+for (let i = 0; i < allCategoriesBtn.length; i++) {
+    allCategoriesBtn[i].addEventListener('click', (e) => {
+        // Remove 'btn-success' class from the currently active button
+        if (activeBtn) {
+            activeBtn.classList.remove("btn-success");
+            activeBtn.classList.remove("text-white");
+            activeBtn.classList.add("btn-outline-success");
+        }
+
+        // Set the clicked button as the new active button
+        activeBtn = e.target;
+
+        // Add 'btn-success' class to the newly clicked button
+        if (!activeBtn.classList.contains("btn-success")) {
+            activeBtn.classList.add("btn-success");
+            activeBtn.classList.add("text-white");
+        }
+    });
+}
 
 
 
