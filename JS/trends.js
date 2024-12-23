@@ -60,6 +60,8 @@ async function getTrendyProducts() {
 getSpecificTrend(trendId).then((data) => {
 	console.log(data);
 	let specificTrend = data.data;
+	console.log('hi')
+	console.log(specificTrend);
 	container.innerHTML = "";
 	specificTrend.forEach((element) => {
 		console.log(element);
@@ -87,21 +89,20 @@ getSpecificTrend(trendId).then((data) => {
 		showMore.forEach((element) => {
 			element.addEventListener("click", (e) => {
 				console.log(e.target);
-				getTrendProductDetails(e.target.dataset.id);
+				console.log(e.target.dataset.id);
+				getTrendProductDetails(e.target.dataset.id, specificTrend);
 			});
 		});
 	});
 });
 
-function getTrendProductDetails(productId) {
-	getTrendyProducts().then((data) => {
-		let specificProduct = data.data.find(
-			(product) => product.goods_id == productId
-		);
-		console.log(specificProduct);
-		showTrendProductDetails(specificProduct);
-		location.href = `#${specificProduct.goods_id}`;
-	});
+function getTrendProductDetails(productId, ArrayOfProducts) {
+	let specificProduct = ArrayOfProducts.find(
+		(product) => product.goods_id == productId
+	);
+	console.log(specificProduct);
+	showTrendProductDetails(specificProduct);
+	location.href = `#${specificProduct.goods_id}`;
 }
 
 const productDetailsContainer = document.querySelector(
@@ -165,10 +166,7 @@ function showTrendProductDetails(product) {
 		});
 	}
 }
-
-
 let cartProducts = [];
-
 // Load existing cart products from localStorage
 const storedProducts = localStorage.getItem("cartProducts");
 if (storedProducts) {
