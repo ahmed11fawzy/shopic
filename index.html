@@ -22,9 +22,9 @@
   </head>
   <body>
     <nav
-      class="navbar navbar-expand-sm navbar-light bg-light"
+      class="navbar navbar-expand-md navbar-light bg-light"
     >
-      <div class="container justify-content-between">
+      <div class="container-md container-fluid  justify-content-between">
         <a class="navbar-brand text-success" href="#"
           >Shopic <i class="fa-solid fa-bag-shopping"></i
         ></a>
@@ -40,11 +40,11 @@
           <i class="fa-solid fa-bars"></i>
         </button>
         <div
-          class="collapse navbar-collapse"
+          class="collapse navbar-collapse navbar-light bg-light mt-3 mt-md-0 z-3 p-3 p-md-0" 
           id="collapsibleNavId"
         >
           <ul
-            class="navbar-nav justify-content-center mx-auto mt-2 mt-lg-0 w-25"
+            class="navbar-nav justify-content-center mx-md-auto mt-2 mt-lg-0 w-25"
           >
             <li class="nav-item">
               <a
@@ -58,7 +58,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="./contact.html">Contact</a>
             </li>
           </ul>
           <ul class="navbar-nav justify-content-end">
@@ -68,6 +68,7 @@
                   id="searchField"
                   type="search"
                   placeholder="Search"
+                  class="w-sm-100"
                 />
                 <i
                   id="searchIcon"
@@ -163,8 +164,8 @@
       </main>
     </section>
     <section id="trendyProducts">
-      <main class="container swiper">
-        <h3 class="mb-5">Trendy Products</h3>
+      <main class="container-md container-fluid swiper">
+        <h3 class="mb-5">Trendy Products  <i class="fa-solid fa-wand-magic-sparkles fa-shake text-success"></i></h3>
         <div
           class="row flex-nowrap row-cols-1 row-cols-sm-1 row-cols-md-4 w-75 swiper-wrapper "
           id="trendGroup"
@@ -179,9 +180,9 @@
       </main>
     </section>
     <section class="categories my-5">
-      <main class="container">
+      <main class="container-md container-fluid">
         <h3 class="mb-5">All categories</h3>
-        <div class="categories d-flex justify-content-md-center">
+        <div class="categories d-flex justify-content-center">
           <button id="allBtn" class="btn btn-success" >All</button>
           <button id="menBtn" class="btn btn-outline-success mx-3 mx-lg-4" >Men</button>
           <button id="womenBtn" class="btn btn-outline-success me-3 me-lg-4" >Women</button>
@@ -192,7 +193,7 @@
         </div>
     </section>
     
-    <footer class=" bg-dark text-white d-flex justify-content-center align-items-center  ">
+    <footer class=" bg-dark text-white d-flex justify-content-center align-items-center">
       <div class="container  text-white ">
         <h2 class="text-center  d-flex justify-content-center align-items-center font-monospace "> All rights &copy; reserved to<p class="text-info ms-2"> af.reus ❤</p></h2>        
       </div>

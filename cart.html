@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/all.min.css">
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/cart.css">
@@ -10,79 +13,80 @@
     <title>Document</title>
 </head>
 <body>
-    <nav
-    class="navbar navbar-expand-sm navbar-light bg-light"
-  >
-    <div class="container justify-content-between">
-      <a class="navbar-brand text-success" href="#"
-        >Shopic <i class="fa-solid fa-bag-shopping"></i
-      ></a>
-      <button
-        class="navbar-toggler d-lg-none"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+  <nav
+  class="navbar navbar-expand-sm navbar-light bg-light"
+>
+  <div class="container justify-content-between">
+    <a class="navbar-brand text-success" href="#"
+      >Shopic <i class="fa-solid fa-bag-shopping"></i
+    ></a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="collapsibleNavId"
+    >
+      <ul
+        class="navbar-nav justify-content-center mx-auto mt-2 mt-lg-0 w-25"
       >
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <div
-        class="collapse navbar-collapse"
-        id="collapsibleNavId"
-      >
-        <ul
-          class="navbar-nav justify-content-center mx-auto mt-2 mt-lg-0 w-25"
-        >
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              href="./index.html"
-              aria-current="page"
-              >Home
-              <span class="visually-hidden"
-                >(current)</span
-              ></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav justify-content-end">
-          <li class="nav-item mx-2">
-            <label for="search">
-              <input
-                id="searchField"
-                type="search"
-                placeholder="Search"
-              />
-              <i
-                id="searchIcon"
-                class="fa-solid fa-magnifying-glass"
-              ></i>
-            </label>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="./cart.html"
-              ><i class="fa-solid fa-cart-plus"></i
-            ></a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#"
-              ><i class="fa-solid fa-user"></i
-            ></a>
-          </li>
-          <li class="nav-item mx-2">
-            <button class="btn btn-outline-success">
-              Log Out
-            </button>
-          </li>
-        </ul>
-      </div>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            href="/index.html"
+            aria-current="page"
+            >Home
+            <span class="visually-hidden"
+              >(current)</span
+            ></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item mx-2">
+          <label for="search">
+            <input
+              id="searchField"
+              type="search"
+              placeholder="Search"
+            />
+            <i
+              id="searchIcon"
+              class="fa-solid fa-magnifying-glass"
+            ></i>
+          </label>
+        </li>
+        <li class="nav-item mx-2 position-relative">
+          <span id="numberOfCartItems" class="position-absolute top-0 start-100 bg-success text-white rounded rounded-circle">0</span>
+          <a class="nav-link" href="./cart.html"
+            ><i class="fa-solid fa-cart-plus"></i
+          ></a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#"
+            ><i class="fa-solid fa-user"></i
+          ></a>
+        </li>
+        <li class="nav-item mx-2">
+          <button class="btn btn-outline-success">
+            Log Out
+          </button>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
   <section>
     <main class="container">
 
@@ -120,6 +124,13 @@
       </div>
     </div>
   </div>
+
+
+  <footer class=" bg-dark text-white d-flex justify-content-center align-items-center  ">
+    <div class="container  text-white ">
+      <h2 class="text-center  d-flex justify-content-center align-items-center font-monospace "> All rights &copy; reserved to<p class="copyright ms-2"> af.reus ❤</p></h2>        
+    </div>
+  </footer>
     <script src="./JS/bootstrap.min.js"></script>
     <script src="./JS/handlesearchicon.js"></script>
     <script src="./JS/cart.js"></script>

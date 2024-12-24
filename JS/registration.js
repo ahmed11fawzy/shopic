@@ -78,6 +78,7 @@ submitBtn.addEventListener('click', (e) => {
         const user = new User(nameInput.value, emailInput.value, passwordInput.value);
         console.log(user);
         sendData(user);
+        location.href = 'index.html';
     }
     else {
         alert('Please fill the form correctly');

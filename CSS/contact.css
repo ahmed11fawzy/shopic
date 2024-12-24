@@ -1,0 +1,17 @@
+.btn-grad:hover{
+    background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+}
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-form-control-bg);
+    border-color: #348F50;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem #4ebe7048;
+}
+
+.bg-gradient{
+    background-image: linear-gradient(to right, #348F50 0%, #56B4D3  51%, #348F50  100%) !important ;
+    background-position: right center;
+}

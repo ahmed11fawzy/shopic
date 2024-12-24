@@ -51,6 +51,61 @@ label[for="search"] i {
   color: #198754 !important;
 }
 
+#allProductsContainer .card {
+  border: none !important;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+  #allProductsContainer .card img {
+  transition: all 0.5s;
+}
+#allProductsContainer .card:hover{
+  transform: translateY(-15px);
+  box-shadow: #198754c0 0px 0px 10px;
+}
+#allProductsContainer .card:hover img{
+  transform: scale(1.1);
+  
+
+}
+
+
+/* IMP heart animation */
+
+
+/* Parts are from twitter.com */
+
+.HeartAnimation {
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/66955/web_heart_animation.png');
+  background-repeat: no-repeat;
+  background-size: 2900%;
+  background-position: left;
+  height: 35px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.animate {
+  animation: heart-burst .8s steps(28) forwards;
+}
+
+/* Apply filter for color change */
+.animate {
+    filter: hue-rotate(170deg); /* Adjust this value for different shades of green */
+}
+
+@keyframes heart-burst {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
+
+
 /* [x] slider */
 
 .slider {
@@ -108,7 +163,7 @@ label[for="search"] i {
 }
 .swiper-button-next,
 .swiper-button-prev {
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255, 255, 255, ) !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .swiper-button-next {
@@ -117,6 +172,34 @@ label[for="search"] i {
 .swiper-button-prev {
   left: 15 !important;
 }
+
+
+.btn-grad {background-image: linear-gradient(to right, #348F50 0%, #56B4D3  51%, #348F50  100%)}
+.btn-grad {
+   
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+
+}
+
+#trendGroup .card:hover .btn-grad {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+
+
+
+/*  */
+
+
+
+
+
 
 #numberOfCartItems{
   display: flex;
@@ -127,6 +210,8 @@ label[for="search"] i {
   font-size: 12px;
 }
 
+
+
 /* footer */
 footer{
     height: 150px;
@@ -136,9 +221,14 @@ footer{
 footer p {
             font-family: "Leckerli One", serif;
             font-weight: 400;
-            font-style: normal;
+            
 }
-
+.copyright{
+  background-image: linear-gradient(45deg, #348F50, #56B4D3,#348F50); /* Define your gradient colors */
+    background-clip: text; /* Clip the background to the text */
+    -webkit-background-clip: text; /* For Safari support */
+    color: transparent; /* Make the text color transparent */
+}
 /* IMP Spinner style */
 
 .loader {
@@ -172,3 +262,14 @@ footer p {
     transform: rotate(360deg);
   }
 } 
+
+
+
+
+
+@media only screen and (max-width: 576px) {
+  #numberOfCartItems{
+    left:15px !important;
+    top: -4px !important;
+  }
+}

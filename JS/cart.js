@@ -151,3 +151,8 @@ function removeCartItem(pId) {
 
 
 
+function showNumberOfCartItems() {
+    cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    document.querySelector("#numberOfCartItems").innerText = cartProducts.length;
+}
+showNumberOfCartItems();

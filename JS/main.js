@@ -125,10 +125,10 @@ const trendyProductsContainer = document.querySelector("#trendGroup");
 function showTrendyProducts(products) {
     products?.forEach(product => {
 
-        trendyProductsContainer ? trendyProductsContainer.innerHTML += `<div id="${product.trendId}" class="col swiper-slide">
-                  <div class="card h-100 ">
+        trendyProductsContainer ? trendyProductsContainer.innerHTML += `<div id="${product.trendId}" class="col swiper-slide bg-white">
+                  <div class="card h-100  bg-white ">
                     <img id="${product.trendId}" src="${product.trendImgUrl}" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body btn-grad">
                       <h5 class="card-title">${product.trendName}</h5>
                       
                     </div>
@@ -226,11 +226,13 @@ function displayAllCategories() {
                 allCategoriesContainer.innerHTML +=
                     `<div class="col">
             <div class="card h-100">
-              <img
+              <div class=' overflow-hidden'>
+                    <img
                 src="${product.goods_img}"
                 class="card-img-top"
                 alt="..."
               />
+              </div>
               <div class="card-body">
                 <h5 class="card-title d-flex ">
                     <p>${product.goods_name.slice(0, 20)}</p>
@@ -238,6 +240,7 @@ function displayAllCategories() {
                 </h5>
                 <div class="d-flex justify-content-between">
                   <p class="view"> <i class="fa-solid fa-eye fa-xl fa-beat-fade"></i> </p>
+                  <div class="HeartAnimation"></div>
                   <p class="add"> <i class="fa-solid fa-plus fa-xl"></i> </p>
                 </div>
               </div>
@@ -264,6 +267,15 @@ function displayAllCategories() {
                         location.href = '#numberOfCartItems'
                     })
                 }
+
+                var heartAnimations = document.querySelectorAll(".HeartAnimation");
+
+                // Loop through each element and add a click event listener
+                heartAnimations.forEach(function (element) {
+                    element.addEventListener("click", function () {
+                        this.classList.toggle("animate");
+                    });
+                });
 
             })
         }, 2000)
@@ -315,7 +327,6 @@ for (let i = 0; i < allCategoriesBtn.length; i++) {
 
 
 
-
-
+/*  */
 
 

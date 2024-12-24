@@ -57,11 +57,13 @@ function displayData(data) {
         allCategoriesContainer.innerHTML +=
             `<div class="col">
         <div class="card h-100">
-          <img
+          <div class='overflow-hidden'>
+            <img
             src="${product.goods_img}"
             class="card-img-top"
             alt="..."
           />
+          </div>
           <div class="card-body">
             <h5 class="card-title d-flex ">
                 <p>${product.goods_name.slice(0, 20)}</p>
@@ -69,6 +71,7 @@ function displayData(data) {
             </h5>
             <div class="d-flex justify-content-between">
               <p class="view"> <i class="fa-solid fa-eye fa-xl fa-beat-fade"></i> </p>
+              <div class="HeartAnimation"></div>
               <p class="add"> <i class="fa-solid fa-plus fa-xl "></i> </p>
             </div>
           </div>
@@ -95,6 +98,18 @@ function displayData(data) {
             location.href = '#numberOfCartItems'
         })
     }
+
+    var heartAnimations = document.querySelectorAll(".HeartAnimation");
+
+    // Loop through each element and add a click event listener
+    heartAnimations.forEach(function (element) {
+        element.addEventListener("click", function () {
+            this.classList.toggle("animate");
+        });
+    });
+
+
+
 }
 function showProducts(catId) {
     fetchingData(catId).then(data => {
