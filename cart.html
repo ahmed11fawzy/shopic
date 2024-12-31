@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
@@ -95,7 +95,51 @@
         <h1 class="">Cart Items <i class="fa-solid fa-cart-shopping text-success"></i></h1>
       </header>
       <div id="cartContainer" class="row    g-4">
-        
+        <div product class="col">
+          <div class="card h-100">
+                
+                <div class="card-body me-auto col-">
+                <h5 class="card-title">${item.goods_name}</h5>
+                <div class="card-text">
+                  <div class="d-flex justify-content-between w-50">
+                      <p class='text-decoration-line-through text-secondary-emphasis'>
+                        price: $${item.retail_price.amount}</p>
+                      <p class='text-danger'> discount: ${item.unit_discount}%</p>
+                      <p> sale: $${item?.sale_price?.amount}</p>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                      <p> ${item ? item?.comment_rank_average : 3}  <i class="fa-solid fa-star text-warning"></i> </p>
+                  </div>
+                </div>
+                  <div class="card-footer bg-white border border-0 top-100 d-flex   justify-content-between align-items-center ">
+                      <div class=" counter-control d-flex w-75   align-items-center pt-3 ">
+                          <div class="d-flex w-100">
+                              <button id="minusIcon" class='btn ' ><i class='fa-solid fa-minus fs-lg '></i></button>
+                              <input id ="quantity" type="text" class="form-control  text-center border border-0 " disabled value="1">
+                              <button id="plusIcon" class='btn ' ><i class='fa-solid fa-plus  fs-lg '></i></button> 
+                              <input id ="value" type="text" class="form-control  text-center border border-0 " disabled value=`${item.sale_price.amount}`>
+                          </div>
+                          
+                      </div>
+                      <div class="d-flex justify-content-evenly w-75 mt-3">
+                        <button id="buyNow" class="btn btn-success ">Buy Now</button>
+                          <button id="delete" class="btn btn-danger ">Delete</button>
+                      </div>
+                  </div>
+                
+                </div>
+              
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="img-container  ">
+                <img
+            src="${item.goods_img}"
+            class="img-fluid "
+            alt="..."
+            />
+            </div>
+        </div>
       </div>
     </main>
   </section>
@@ -126,7 +170,7 @@
   </div>
 
 
-  <footer class=" bg-dark text-white d-flex justify-content-center align-items-center  ">
+  <footer class=" bg-dark text-white d-flex justify-content-center align-items-center position-fixed bottom-0 w-100 ">
     <div class="container  text-white ">
       <h2 class="text-center  d-flex justify-content-center align-items-center font-monospace "> All rights &copy; reserved to<p class="copyright ms-2"> af.reus ❤</p></h2>        
     </div>

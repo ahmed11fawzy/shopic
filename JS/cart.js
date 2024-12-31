@@ -30,7 +30,7 @@ function showCartItem(cartProducts) {
 
 }
 
-showCartItem(cartProducts);
+// showCartItem(cartProducts);
 
 const url = 'https://shein-scraper-api.p.rapidapi.com/shein/product/details?goods_id=26546662&currency=usd&country=us&language=en';
 
@@ -82,12 +82,7 @@ function displayCartItem(cartProduct) {
                                 <input id ="quantity" type="text" class="form-control  text-center border border-0 " disabled value="1">
                                 <button id="plusIcon" class='btn ' ><i class='fa-solid fa-plus  fs-lg '></i></button> 
                             </div>
-                            <div class="">
-                                <h3 class="d-flex" >Total:
-                                <input id="total" type="text" class="form-control w-50  border border-0 " disabled value="1">$
-                                </h3>
-                                
-                            </div>
+                            
                         </div>
                         <div class="d-flex justify-content-between w-75 mt-3">
                             <button id="delete" class="btn btn-danger w-25">Delete</button>

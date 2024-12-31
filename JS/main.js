@@ -181,7 +181,7 @@ swiperWrapper.addEventListener("click", (e) => {
 
 export let productId;
 let cartProducts;
-
+let wishListProducts = [];
 function showNumberOfCartItems() {
     cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
     document.querySelector("#numberOfCartItems").innerText = cartProducts.length;
@@ -240,7 +240,7 @@ function displayAllCategories() {
                 </h5>
                 <div class="d-flex justify-content-between">
                   <p class="view"> <i class="fa-solid fa-eye fa-xl fa-beat-fade"></i> </p>
-                  <div class="HeartAnimation"></div>
+                  <div id="liveToastBtn" class="HeartAnimation"></div>
                   <p class="add"> <i class="fa-solid fa-plus fa-xl"></i> </p>
                 </div>
               </div>
@@ -250,6 +250,7 @@ function displayAllCategories() {
              `;
                 let allViews = document.querySelectorAll('.view')
                 let allAdds = document.querySelectorAll('.add')
+                let heartAnimations = document.querySelectorAll(".HeartAnimation");
 
                 for (let i = 0; i < allViews.length; i++) {
                     allViews[i].addEventListener('click', (e) => {
@@ -264,16 +265,41 @@ function displayAllCategories() {
                         console.log(allProducts[i].goods_id);
                         productId = allProducts[i].goods_id;
                         gettingAndSettingAllCartProduct(productId);
-                        location.href = '#numberOfCartItems'
+                        displayToast("Cart", "Product added to cart");
                     })
+                    heartAnimations[i].addEventListener("click", (e) => {
+                        productId = allProducts[i].goods_id;
+                        if (e.target.classList.contains("animate")) {
+                            displayToast("WishList", "Product removed from wishlist");
+                            wishListProducts = wishListProducts.filter(product => product !== productId);
+                            localStorage.setItem("wishListProducts", JSON.stringify(wishListProducts));
+
+                        }
+                        else {
+                            displayToast("WishList", "Product added to wishlist");
+                            wishListProducts.push(productId);
+                            localStorage.setItem("wishListProducts", JSON.stringify(wishListProducts));
+
+
+
+
+                        }
+
+
+                        console.log(wishListProducts);
+
+                    })
+
                 }
 
-                var heartAnimations = document.querySelectorAll(".HeartAnimation");
 
                 // Loop through each element and add a click event listener
                 heartAnimations.forEach(function (element) {
                     element.addEventListener("click", function () {
                         this.classList.toggle("animate");
+
+
+
                     });
                 });
 
@@ -320,8 +346,64 @@ for (let i = 0; i < allCategoriesBtn.length; i++) {
 
 
 
+/* IMP grade toast */
+
+function displayToast(tostHeader, toastMessage) {
+    const toastContainer = document.createElement('div');
+    toastContainer.className = "toast-container position-fixed bottom-0 end-0 p-3";
+
+    // Create the toast element
+    const toast = document.createElement('div');
+    toast.id = "liveToast";
+    toast.className = "toast btn-grad border-0 text-white";
+    toast.setAttribute("role", "alert");
+    toast.setAttribute("aria-live", "assertive");
+    toast.setAttribute("aria-atomic", "true");
+
+    // Create the toast header
+    const toastHeader = document.createElement('div');
+    toastHeader.className = "toast-header text-success";
 
 
+
+    const strong = document.createElement('strong');
+    strong.className = "me-auto  text-success ";
+    strong.textContent = tostHeader;
+
+    const small = document.createElement('small');
+    small.textContent = "now";
+
+    const closeButton = document.createElement('button');
+    closeButton.type = "button";
+    closeButton.className = "btn-close";
+    closeButton.setAttribute("data-bs-dismiss", "toast");
+    closeButton.setAttribute("aria-label", "Close");
+
+    // Append elements to the header
+
+    toastHeader.appendChild(strong);
+    toastHeader.appendChild(small);
+    toastHeader.appendChild(closeButton);
+
+    // Create the toast body
+    const toastBody = document.createElement('div');
+    toastBody.className = "toast-body";
+    toastBody.textContent = toastMessage;
+
+    // Append header and body to the toast
+    toast.appendChild(toastHeader);
+    toast.appendChild(toastBody);
+
+    // Append the toast to the container
+    toastContainer.appendChild(toast);
+
+    // Append the container to the main products container
+    document.querySelector('body').appendChild(toastContainer);
+
+    // Optionally show the toast (if using Bootstrap's JavaScript)
+    const bsToast = new bootstrap.Toast(toast);
+    bsToast.show();
+}
 
 
 

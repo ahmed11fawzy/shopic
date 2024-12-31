@@ -20,3 +20,9 @@ function handleSearchIconClick(searchIcon, searchField) {
 handleSearchIconClick(searchIcon, searchField);
 
 
+searchField.addEventListener("input", () => {
+  const searchValue = searchField.value.toLowerCase();
+
+});
+
+
