@@ -1,10 +1,19 @@
 const options = {
     method: 'GET',
     headers: {
-        'x-rapidapi-key': '2d148f2205msh88c163f3a739a2cp13022fjsnafb8f743d20a',
+        'x-rapidapi-key': '6fa2b4edbemsh65959f9dbf7e803p171b13jsn22aa0f4f26b5',
         'x-rapidapi-host': 'shein-scraper-api.p.rapidapi.com'
     }
 };
+const checkOutBtn = document.querySelector('#checkOutBtn');
+const totalPrice = document.querySelector('#totalPrice');
+
+const allCartItemsValue = document.querySelectorAll('.value');
+console.log(allCartItemsValue);
+allCartItemsValue.forEach(item => {
+    totalPrice.value += item.value;
+});
+
 let cartProducts = [];
 const cartContainer = document.querySelector('#cartContainer');
 function showSpinner() {
@@ -30,7 +39,7 @@ function showCartItem(cartProducts) {
 
 }
 
-// showCartItem(cartProducts);
+//showCartItem(cartProducts);
 
 const url = 'https://shein-scraper-api.p.rapidapi.com/shein/product/details?goods_id=26546662&currency=usd&country=us&language=en';
 
@@ -97,7 +106,7 @@ function displayCartItem(cartProduct) {
           <div class="col-md-4">
               <div class="img-container  ">
                   <img
-              src="${item.goods_img}"
+              src=""
               class="img-fluid "
               alt="..."
               />

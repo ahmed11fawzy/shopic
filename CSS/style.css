@@ -184,15 +184,15 @@ label[for="search"] i {
 
 }
 
-#trendGroup .card:hover .btn-grad {
-   background-position: right center; /* change the direction of the change here */
+#trendGroup .card:hover .btn-grad ,.btn-grad:hover {
+   background-position: right center !important; /* change the direction of the change here */
    color: #fff;
    text-decoration: none;
  }
 
 
 
-
+ 
 
 /*  */
 
