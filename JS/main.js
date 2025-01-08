@@ -1,30 +1,18 @@
 
-// Handle Search Icon
+// Handle user Icon and aside bar
+
+const userIcon = document.querySelector('#userIcon')
+const asideBar = document.querySelector('.side-bar')
+userIcon.addEventListener('click', (e) => {
+    e.preventDefault
+    asideBar.classList.toggle('w-20')
 
 
 
-/* const searchIcon = document.querySelector("#searchIcon");
-const searchField = document.querySelector("#searchField"); */
+})
 
 
-/* export function handleSearchIconClick(searchIcon,searchField) {
-    searchIcon.addEventListener("click", () => {
-        searchField.focus();
-        searchField.classList.toggle("focus");
-        searchIcon.classList.toggle("fa-magnifying-glass");
-    })
-    searchIcon.addEventListener("blur", () => {
-        searchField.classList.remove("focus");
-        searchIcon.classList.toggle("fa-magnifying-glass");
-    })
-    searchField.addEventListener("blur", () => {
-        searchField.classList.remove("focus");
-        searchIcon.classList.toggle("fa-magnifying-glass");
-        
-    })
-} */
 
-/* handleSearchIconClick(searchIcon,searchField); */
 
 
 
@@ -163,7 +151,7 @@ function showTrendyProducts(products) {
 }
 
 
-showTrendyProducts(trendyData.data);
+// showTrendyProducts(trendyData.data);
 
 
 const swiperWrapper = document.querySelector(".swiper-wrapper ");

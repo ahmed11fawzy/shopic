@@ -1,21 +1,31 @@
-.counter-control{
-    padding-inline: 10px;
+.counter-control {
+  padding-inline: 10px;
 
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.counter-control input{
-    background-color: transparent !important;
+.counter-control input {
+  background-color: transparent !important;
 }
 
-.counter-control button:hover{
-    border-radius: 50% !important;
-    background-color: #198754 !important;
-    color: white !important;
+.counter-control button:hover {
+  border-radius: 50% !important;
+  background-color: #198754 !important;
+  color: white !important;
 }
 
-#buyNow:hover{
-    background-color: #00b963f1 !important;
-    border:none !important;
-    color: white !important;
+#buyNow:hover {
+  background-color: #00b963f1 !important;
+  border: none !important;
+  color: white !important;
+}
+
+/* Handle remove item */
+
+.remove-item {
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0 0 0px rgba(255, 5, 5, 0.4);
+  transform: translateX(-100%);
+  transition: all 700ms ease-in-out;
 }

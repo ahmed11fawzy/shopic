@@ -2,9 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
-body{
+body {
   padding-bottom: 0px;
 }
 .w-90 {
@@ -58,27 +57,23 @@ label[for="search"] i {
 
   transition: all 0.5s;
 }
-  #allProductsContainer .card img {
+#allProductsContainer .card img {
   transition: all 0.5s;
 }
-#allProductsContainer .card:hover{
+#allProductsContainer .card:hover {
   transform: translateY(-15px);
   box-shadow: #198754c0 0px 0px 10px;
 }
-#allProductsContainer .card:hover img{
+#allProductsContainer .card:hover img {
   transform: scale(1.1);
-  
-
 }
 
-
 /* IMP heart animation */
-
 
 /* Parts are from twitter.com */
 
 .HeartAnimation {
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/66955/web_heart_animation.png');
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/66955/web_heart_animation.png");
   background-repeat: no-repeat;
   background-size: 2900%;
   background-position: left;
@@ -88,30 +83,30 @@ label[for="search"] i {
 }
 
 .animate {
-  animation: heart-burst .8s steps(28) forwards;
+  animation: heart-burst 0.8s steps(28) forwards;
 }
 
 /* Apply filter for color change */
 .animate {
-    filter: hue-rotate(170deg); /* Adjust this value for different shades of green */
+  filter: hue-rotate(
+    170deg
+  ); /* Adjust this value for different shades of green */
 }
 
 @keyframes heart-burst {
-	0% {
-		background-position: left;
-	}
-	100% {
-		background-position: right;
-	}
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
-
 
 /* [x] slider */
 
 .slider {
   height: 95vh !important;
   overflow: hidden;
-  
 }
 .carousel {
   position: relative;
@@ -123,7 +118,7 @@ label[for="search"] i {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-size: 100% 100%;;
+  background-size: 100% 100%;
   background-position: center;
   transition: opacity 0.5s ease-in-out;
   opacity: 0; /* Start with all slides hidden */
@@ -163,7 +158,7 @@ label[for="search"] i {
 }
 .swiper-button-next,
 .swiper-button-prev {
-  background-color: rgba(255, 255, 255, ) !important;
+  background-color: rgba(255, 255, 255) !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .swiper-button-next {
@@ -173,35 +168,31 @@ label[for="search"] i {
   left: 15 !important;
 }
 
-
-.btn-grad {background-image: linear-gradient(to right, #348F50 0%, #56B4D3  51%, #348F50  100%)}
 .btn-grad {
-   
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px #eee;
-
+  background-image: linear-gradient(
+    to right,
+    #348f50 0%,
+    #56b4d3 51%,
+    #348f50 100%
+  );
+}
+.btn-grad {
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
 }
 
-#trendGroup .card:hover .btn-grad ,.btn-grad:hover {
-   background-position: right center !important; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
-
-
-
- 
+#trendGroup .card:hover .btn-grad,
+.btn-grad:hover {
+  background-position: right center !important; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
 
 /*  */
 
-
-
-
-
-
-#numberOfCartItems{
+#numberOfCartItems {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -210,24 +201,26 @@ label[for="search"] i {
   font-size: 12px;
 }
 
-
-
 /* footer */
-footer{
-    height: 150px;
-    margin-top: 56px;
-    margin-bottom: -8px;
+footer {
+  height: 150px;
+  margin-top: 56px;
+  margin-bottom: -8px;
 }
 footer p {
-            font-family: "Leckerli One", serif;
-            font-weight: 400;
-            
+  font-family: "Leckerli One", serif;
+  font-weight: 400;
 }
-.copyright{
-  background-image: linear-gradient(45deg, #348F50, #56B4D3,#348F50); /* Define your gradient colors */
-    background-clip: text; /* Clip the background to the text */
-    -webkit-background-clip: text; /* For Safari support */
-    color: transparent; /* Make the text color transparent */
+.copyright {
+  background-image: linear-gradient(
+    45deg,
+    #348f50,
+    #56b4d3,
+    #348f50
+  ); /* Define your gradient colors */
+  background-clip: text; /* Clip the background to the text */
+  -webkit-background-clip: text; /* For Safari support */
+  color: transparent; /* Make the text color transparent */
 }
 /* IMP Spinner style */
 
@@ -242,7 +235,7 @@ footer p {
   animation: rotation 1s linear infinite;
 }
 .loader::after {
-  content: '';  
+  content: "";
   box-sizing: border-box;
   position: absolute;
   left: 0;
@@ -250,10 +243,30 @@ footer p {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border-left: 4px solid #FF3D00;
+  border-left: 4px solid #ff3d00;
   border-bottom: 4px solid transparent;
   animation: rotation 0.5s linear infinite reverse;
 }
+
+/* aside bar */
+.w-20 {
+  width: 20% !important;
+}
+
+.side-bar {
+  position: fixed;
+  width: 0%;
+  z-index: 9;
+  height: 87vh;
+  top: 10vh;
+  right: 0;
+  box-shadow: #01412359 2px 0px 25px;
+
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+/* ------------- */
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -261,15 +274,11 @@ footer p {
   100% {
     transform: rotate(360deg);
   }
-} 
-
-
-
-
+}
 
 @media only screen and (max-width: 576px) {
-  #numberOfCartItems{
-    left:15px !important;
+  #numberOfCartItems {
+    left: 15px !important;
     top: -4px !important;
   }
 }
